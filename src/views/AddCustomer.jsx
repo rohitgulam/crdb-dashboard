@@ -1,6 +1,5 @@
 import React from 'react';
 import InputGroup from '../components/InputGroup';
-import Button from '../components/Button';
 
 function AddCustomer() {
   return (
