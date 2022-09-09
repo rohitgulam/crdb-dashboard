@@ -4,10 +4,9 @@ import AddCustomer from './views/AddCustomer';
 
 function App() {
   return (
-    <div className="flex">
-      {/* <Sidebar /> */}
+    <div className="flex bg-slate-200">
+      <Sidebar />
       <AddCustomer />
-      <input type="email" name="" id="" />
     </div>
   );
 }
