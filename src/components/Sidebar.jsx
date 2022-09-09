@@ -7,13 +7,12 @@ import {BsPersonPlusFill, BsPeopleFill} from 'react-icons/bs';
 
 function Sidebar() {
   return (
-    <div className='w-1/5 py-14 h-[100vh] bg-crdbDark text-white mr-8'>
+    <div className='min-w-[380px] py-14 h-[100vh] bg-crdbDark text-white'>
       <div className=' h-3/5 flex flex-col items-center justify-between'>
 
         <div>
           <img src={logo} alt="" />
         </div>
-        _________________________________
 
         <div className='self-start pl-14'>
           <ul className='list-none text-2xl'>
