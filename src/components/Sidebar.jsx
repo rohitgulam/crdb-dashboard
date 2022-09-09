@@ -7,7 +7,7 @@ import {BsPersonPlusFill, BsPeopleFill} from 'react-icons/bs';
 
 function Sidebar() {
   return (
-    <div className='w-1/5 py-14 h-[100vh] bg-crdbDark text-white'>
+    <div className='w-1/5 py-14 h-[100vh] bg-crdbDark text-white mr-8'>
       <div className=' h-3/5 flex flex-col items-center justify-between'>
 
         <div>
