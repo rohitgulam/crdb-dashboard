@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 import logo from '../img/crdb-logo.svg';
 import {AiFillHome} from 'react-icons/ai';
 import {FiLogOut} from 'react-icons/fi';
@@ -16,17 +17,25 @@ function Sidebar() {
 
         <div className='self-start pl-14'>
           <ul className='list-none text-2xl'>
-            <li className='flex items-center py-5'>
-              <AiFillHome/> <span className='pl-3' >Home</span>
+            <li >
+              <Link to="/" className='flex items-center py-5' >
+                <AiFillHome/> <span className='pl-3' >Home</span>
+              </Link>
             </li>
-            <li className='flex items-center py-5'>
-              <BsPersonPlusFill/> <span className='pl-3' >Add Customer</span>
+            <li>
+              <Link to="/add-customer" className='flex items-center py-5'>
+                <BsPersonPlusFill/> <span className='pl-3' >Add Customer</span>
+              </Link>
             </li>
-            <li className='flex items-center py-5'>
-              <BsPeopleFill/> <span className='pl-3' >Customers</span>
+            <li>
+              <Link to="/customers" className='flex items-center py-5' >
+                <BsPeopleFill/> <span className='pl-3' >Customers</span>
+              </Link>
             </li>
-            <li className='flex items-center py-5'>
-              <FiLogOut/> <span className='pl-3' >Logout</span>
+            <li>
+              <Link to="/logout" className='flex items-center py-5' >
+                <FiLogOut/> <span className='pl-3' >Logout</span>
+              </Link>
             </li>
           </ul>
         </div>
