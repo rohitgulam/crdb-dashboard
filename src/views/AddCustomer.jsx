@@ -1,8 +1,11 @@
 import React from 'react';
 import InputGroup from '../components/InputGroup';
+import Sidebar from '../components/Sidebar';
 
 function AddCustomer() {
   return (
+    <div className="flex">
+    <Sidebar />
     <div className='flex flex-col my-20 w-full mx-12 px-10'>
         <h1 className='text-4xl mb-12'>Create a New Customer</h1>
         <form 
@@ -59,8 +62,9 @@ function AddCustomer() {
                     placeholder="Kariakoo"
                 />
             </div>
-            <input type="submit" value="Save" className='w-32 rounded py-3 bg-crdbDark text-white self-end mr-5' />
+            <input type="submit" value="Save" className='w-32 rounded cursor-pointer py-3 bg-crdbDark text-white self-end mr-5' />
         </form>
+    </div>
     </div>
   )
 }

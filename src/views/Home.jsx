@@ -1,8 +1,12 @@
-import React from 'react'
+import React from 'react';
+import Sidebar from '../components/Sidebar';
 
 function Home() {
   return (
-    <div>Home</div>
+    <div className='flex' >
+      <Sidebar />
+      Home
+      </div>
   )
 }
 
