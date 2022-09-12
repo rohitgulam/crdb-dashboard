@@ -1,9 +1,22 @@
 import React from 'react';
+import { useState, useEffect } from 'react';
 import Button from '../components/Button';
 import {AiOutlinePlus} from 'react-icons/ai';
 import Sidebar from '../components/Sidebar';
 
 function Customers() {
+  const [customers, setCustomers] = useState([]);
+
+  useEffect( () => {
+    getCustomers();
+  }, [] );
+
+  const getCustomers = async () => {
+    const api = await fetch('http://bankcustomersapi.test/api/customers');
+    const data = await api.json();
+    setCustomers(data);
+  }
+
   return (
     <div className="flex">
     <Sidebar />
@@ -19,45 +32,25 @@ function Customers() {
         <div className='h-full bg-white py-5 px-4' >
           <table className='w-full text-left table-auto' >
             <tr className='border-8 border-transparent' >
-              <th >Customer ID</th>
+              <th className='py-4'>Customer ID</th>
               <th>Name</th>
               <th>Register Date</th>
-              <th>Adress</th>
+              <th>Email</th>
               <th>Balance</th>
               <th>Account Type</th>
             </tr>
-            <tr className='border-8 border-transparent text-gray-700' >
-              <td>A2008BE</td>
-              <td>Jack Sparrow</td>
-              <td>02/09/2022</td>
-              <td>Caribbean</td>
-              <td>Tsh 400,000</td>
-              <td>Savings</td>
-            </tr>
-            <tr className='border-8 border-transparent text-gray-700' >
-              <td>A2008BE</td>
-              <td>Jack Sparrow</td>
-              <td>02/09/2022</td>
-              <td>Caribbean</td>
-              <td>Tsh 400,000</td>
-              <td>Savings</td>
-            </tr>
-            <tr className='border-8 border-transparent text-gray-700' >
-              <td>A2008BE</td>
-              <td>Jack Sparrow</td>
-              <td>02/09/2022</td>
-              <td>Caribbean</td>
-              <td>Tsh 400,000</td>
-              <td>Savings</td>
-            </tr>
-            <tr className='border-8 border-transparent text-gray-700' >
-              <td>A2008BE</td>
-              <td>Jack Sparrow</td>
-              <td>02/09/2022</td>
-              <td>Caribbean</td>
-              <td>Tsh 400,000</td>
-              <td>Savings</td>
-            </tr>
+            {customers.map( (customer) => {
+              return(
+                <tr className='border-8 border-transparent text-gray-700' >
+                  <td className='py-4' >{customer.account_number}</td>
+                  <td>{customer.name}</td>
+                  <td>{customer.created_at}</td>
+                  <td>{customer.email}</td>
+                  <td>Tsh {customer.balance}</td>
+                  <td>{customer.account_type}</td>
+                </tr>
+              )
+            })}
           </table>
         </div>
     </div>
