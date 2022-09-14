@@ -2,7 +2,7 @@ import React from 'react'
 
 function SelectBox({label , name1, name2}) {
   return (
-    <div className='flex flex-col w-full px-5'>
+    <div className='flex flex-col w-full'>
          <label
          className='text-xl'
          htmlFor="name">{label}</label>
