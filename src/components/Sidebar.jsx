@@ -8,7 +8,7 @@ import {BsPersonPlusFill, BsPeopleFill} from 'react-icons/bs';
 
 function Sidebar() {
   return (
-    <div className='min-w-[380px] py-14 h-[100vh] bg-crdbDark text-white'>
+    <div className='fixed min-w-[380px] py-14 h-[100vh] bg-crdbDark text-white '>
       <div className=' h-3/5 flex flex-col items-center justify-between'>
 
         <div>
