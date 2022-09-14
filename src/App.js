@@ -8,7 +8,7 @@ import ProtectedRoutes from './components/ProtectedRoutes'
 
 function App() {
   return (
-    <div className="bg-slate-200">
+    <div className="bg-slate-200 min-h-[100vh]">
       <Routes>
         
         <Route element={ <ProtectedRoutes/> } >
