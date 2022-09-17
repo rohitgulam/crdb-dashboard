@@ -40,9 +40,8 @@ function Sidebar() {
           </ul>
         </div>
       </div>
-      <div className='fixed bottom-12 mx-12 flex items-center w-72 text-2xl '>
-        <BsPersonCircle className='text-5xl'/>
-        <span className="pl-6">Profile</span>
+      <div className='ml-24 mt-80 flex items-center w-72 text-2xl '>
+        {sessionStorage.getItem('userName')}
       </div>
       
     </div>
