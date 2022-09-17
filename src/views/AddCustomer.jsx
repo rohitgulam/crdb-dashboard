@@ -20,13 +20,14 @@ function AddCustomer() {
     //     e.preventDefault();
 
         const formData = {
-            'name': firstName + ' ' + lastName, 
-            'account_type': account,
-            'account_number': 1222121,
-            'address': email,
+            'fname': firstName, 
+            'lname': lastName, 
+            'pin': password,
+            'phone': phone,
+            'birth': dob,
+            'reg_branch': branch,
             'email': email,
-            'dob': dob,
-            'balance': 20000
+            'acc_type': account
         }
 
         // console.log(formData);
@@ -42,7 +43,9 @@ function AddCustomer() {
         e.preventDefault();
 
         // USing axios
-            await axios.post('http://bankcustomersapi.test/api/customers', formData)
+            await axios.post('http://139.162.249.220:9990/api/customer', formData, {headers: {
+                'authorization': sessionStorage.getItem("token")
+            }})
             .then(
                 response => {
                     setUserCreated(true);
@@ -73,7 +76,7 @@ function AddCustomer() {
     <Sidebar />
     <div className="flex flex-col rounded w-[90%] min-h-[84%] bg-white ml-[450px] mr-16 my-20 py-10 px-24">
 
-        <div className={ userCreated ? 'rounded bg-crdbLight text-crdbDark py-4 px-24 text-center text-xl fixed top-24 left-[50%]' : 'hidden'} >User Created</div>
+        <div className={ userCreated ? 'rounded bg-crdbLight text-crdbDark py-4 px-24 text-center text-xl fixed top-24 left-[50%]' : 'hidden'} >Customer Created</div>
         <h1 className='text-4xl mb-6' >Create  Customer</h1>
 
         <form className='py-10 grid md:grid-cols-2 sm:grid-cols-2 gap-y-6 gap-x-6 '
