@@ -1,24 +1,12 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {Outlet, Navigate} from 'react-router-dom';
+import AuthContext from '../AuthContext';
 
-function ProtectedRoutes(  ) {
-  let auth = {'token' : true}
+function ProtectedRoutes() {
+
+  const {isAuth} = useContext(AuthContext);
   return (
-    auth.token ? <Outlet/> : <Navigate to="/login" />
+    isAuth ? <Outlet/> : <Navigate to="/login" />
   )
 }
-// function ProtectedRoute( isAuth, Component, ...rest ) {
-//   return (
-//     <Route 
-//         {...rest} render={ (props)=>{
-//             if(isAuth){
-//                 return <Component/>
-//             } else{
-//                 return <Navigate to={{pathname: '/login', state: {from: props.location}}} />
-//             }
-//         } }
-//     />
-//   )
-// }
-
 export default ProtectedRoutes
