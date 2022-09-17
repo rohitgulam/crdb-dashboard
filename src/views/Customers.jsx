@@ -3,6 +3,9 @@ import { useState, useEffect } from 'react';
 import Button from '../components/Button';
 import {AiOutlinePlus} from 'react-icons/ai';
 import Sidebar from '../components/Sidebar';
+import axios from 'axios';
+import Moment from 'moment';
+import moment from 'moment';
 
 function Customers() {
   const [customers, setCustomers] = useState([]);
@@ -12,9 +15,30 @@ function Customers() {
   }, [] );
 
   const getCustomers = async () => {
-    const api = await fetch('http://bankcustomersapi.test/api/customers');
-    const data = await api.json();
-    setCustomers(data);
+    // const api = await fetch('http://bankcustomersapi.test/api/customers');
+    // const data = await api.json();
+    // setCustomers(data);
+
+    // const headers = {
+    //   'authorization': sessionStorage.getItem("token")
+    // }
+
+
+
+    await axios.get('http://139.162.249.220:9990/api/customer_list', 
+    {headers:{
+      'authorization': sessionStorage.getItem("token")
+  }})
+            .then(
+                response => {
+                    setCustomers(response.data.result);
+                }
+            )
+            .catch(
+                error => {
+                    console.log('Error::', error.response.data)
+                }
+            )
   }
 
   return (
@@ -42,12 +66,12 @@ function Customers() {
             {customers.map( (customer) => {
               return(
                 <tr className='border-8 border-transparent text-gray-700'  >
-                  <td className='py-4' >{customer.account_number}</td>
-                  <td>{customer.name}</td>
-                  <td>{customer.created_at}</td>
-                  <td>{customer.email}</td>
+                  <td className='py-4' >{customer.account_no}</td>
+                  <td>{customer.first_name + ' ' + customer.last_name }</td>
+                  <td>{moment(customer.registration_date).format('DD/MM/YYYY')}</td>
+                  <td>{customer.phone}</td>
                   <td>Tsh {customer.balance}</td>
-                  <td>{customer.account_type}</td>
+                  <td>{customer.account_type }</td>
                 </tr>
               )
             })}
