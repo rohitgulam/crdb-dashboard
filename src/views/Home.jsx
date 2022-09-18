@@ -1,15 +1,17 @@
-import React from 'react';
+import React, {useRef, useState} from 'react';
 import Sidebar from '../components/Sidebar';
 import InputGroup from '../components/InputGroup';
 import logo from '../img/crdb-logo.svg';
-import SelectBox from '../components/SelectBox';
-import { useState } from 'react';
 import axios from 'axios';
-import moment, { now } from 'moment';
+import moment from 'moment';
+import SignaturePad from 'react-signature-canvas'
 
 
 function Home() {
-    const [token, setToken] = useState('');
+        // Define Ref
+        const sigCanvas = useRef({});
+
+        const [token, setToken] = useState('');
         const [branch, setBranch] = useState('Kijitonyama');
         const [confirmed, setConfirmed] = useState(false);
         const [accountNumber, setAccountNumber] = useState('');
@@ -22,6 +24,8 @@ function Home() {
         const [transactionID, setTransactionID] = useState('');
         const [custName, setCustName] = useState('');
         const [userCreated, setUserCreated] = useState(false);
+
+        const clear = () => sigCanvas.current.clear()
 
 
         const formData = {
@@ -179,14 +183,28 @@ function Home() {
                         placeholder=""
                         value={accountName}
                     />
-                    <InputGroup
-                        label="signature/sahihi"
-                        type='text'
-                        placeholder=""
-                    />
+                    <div className="flex flex-col">
+                            <span className='text-xl pt-2'>Signature/Sahihi</span>
+                        <div className="rounded border-2 border-black">
+                            <SignaturePad 
+                                ref={sigCanvas}
+                                // canvasProps={{className: 'h-28'}}
+                            />
+                        </div>
+                        <div
+                            className='' 
+                         >
+                            
+                         </div>
+                    </div>
                     <input type="submit" value="CONFIRM" className={ verified ? 'w-32 rounded cursor-pointer py-3 bg-crdbDark text-white self-end mr-5 pointer-events-none cursor-not-allowed' : 'w-32 rounded cursor-pointer py-3 bg-crdbDark text-white self-end mr-5' }/>
                     <div className={ verified ? 'rounded bg-crdbLight border-2 border-crdbDark py-4 px-24 text-center text-crdbDark text-black fixed top-28 left-[40%]' : 'hidden' } > Transaciton Completed</div>
+                    <button 
+                        onClick={clear}
+                        className='w-32 rounded cursor-pointer py-3 bg-crdbLight text-black mr-5'> Clear 
+                    </button>
                     </form>
+                   
         </div>
       </div>
       </div>
