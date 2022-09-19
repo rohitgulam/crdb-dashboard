@@ -33,7 +33,7 @@ function Sidebar() {
               </Link>
             </li>
             <li>
-              <Link to="/logout" className='flex items-center py-5' >
+              <Link to="/login" className='flex items-center py-5' >
                 <FiLogOut/> <span className='pl-3' >Logout</span>
               </Link>
             </li>
