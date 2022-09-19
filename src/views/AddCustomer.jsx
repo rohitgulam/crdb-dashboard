@@ -122,7 +122,7 @@ function AddCustomer() {
                     onChange={(e) => setDob(e.target.value)}
                 />
                 <InputGroup
-                    label="Password"
+                    label="Pin"
                     type='password'
                     name='password'
                     value={password}
