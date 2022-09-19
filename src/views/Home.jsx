@@ -67,6 +67,9 @@ function Home() {
                         console.log('Error::', error.response.data)
                         setVerified(true);
                         console.log(verified);
+                        setTimeout(()=>{
+                            setVerified(false);
+                        }, 3000)
                 }
             )
 
@@ -83,6 +86,9 @@ function Home() {
                 response => {
                     console.log(response);
                     setConfirmed(true);
+                    setTimeout(()=>{
+                        setConfirmed(false);
+                    }, 3000)
                     
                 }
             )
@@ -197,12 +203,13 @@ function Home() {
                             
                          </div>
                     </div>
-                    <input type="submit" value="CONFIRM" className={ verified ? 'w-32 rounded cursor-pointer py-3 bg-crdbDark text-white self-end mr-5 pointer-events-none cursor-not-allowed' : 'w-32 rounded cursor-pointer py-3 bg-crdbDark text-white self-end mr-5' }/>
-                    <div className={ verified ? 'rounded bg-crdbLight border-2 border-crdbDark py-4 px-24 text-center text-crdbDark text-black fixed top-28 left-[40%]' : 'hidden' } > Transaciton Completed</div>
-                    <button 
+                    <input type="submit" value="CONFIRM" className={ confirmed ? 'w-32 rounded cursor-pointer py-3 bg-crdbDark text-white self-end mr-5 pointer-events-none cursor-not-allowed' : 'w-32 rounded cursor-pointer py-3 bg-crdbDark text-white self-end mr-5' }/>
+                    <div className={ verified ? 'rounded bg-crdbLight border-2 border-crdbDark py-4 px-24 text-center text-crdbDark text-black fixed top-28 left-[40%]' : 'hidden' } > This Transaction has been served</div>
+                    <div className={ confirmed ? 'rounded bg-crdbLight border-2 border-crdbDark py-4 px-24 text-center text-crdbDark text-black fixed top-28 left-[40%]' : 'hidden' } > Transaciton Succesful!</div>
+                    <span 
                         onClick={clear}
-                        className='w-32 rounded cursor-pointer py-3 bg-crdbLight text-black mr-5'> Clear 
-                    </button>
+                        className='w-32 rounded cursor-pointer py-3 bg-crdbLight text-black mr-5 text-center'> Clear 
+                    </span>
                     </form>
                    
         </div>
