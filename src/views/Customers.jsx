@@ -4,7 +4,6 @@ import Button from '../components/Button';
 import {AiOutlinePlus} from 'react-icons/ai';
 import Sidebar from '../components/Sidebar';
 import axios from 'axios';
-import Moment from 'moment';
 import moment from 'moment';
 
 function Customers() {
@@ -59,6 +58,7 @@ function Customers() {
               <th className='py-4'>Account Number</th>
               <th>Name</th>
               <th>Register Date</th>
+              <th>Phone</th>
               <th>Email</th>
               <th>Balance</th>
               <th>Account Type</th>
@@ -70,6 +70,7 @@ function Customers() {
                   <td>{customer.first_name + ' ' + customer.last_name }</td>
                   <td>{moment(customer.registration_date).format('DD/MM/YYYY')}</td>
                   <td>{customer.phone}</td>
+                  <td>{customer.email}</td>
                   <td>Tsh {customer.balance}</td>
                   <td>{customer.account_type }</td>
                 </tr>
