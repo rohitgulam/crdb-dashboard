@@ -43,6 +43,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^9.8.8",
+    "netlify-cli": "^11.8.0",
     "postcss": "^8.4.16",
     "tailwindcss": "^3.1.8"
   }
