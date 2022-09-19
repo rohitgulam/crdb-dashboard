@@ -4,6 +4,7 @@ import Button from '../components/Button';
 import {AiOutlinePlus} from 'react-icons/ai';
 import Sidebar from '../components/Sidebar';
 import axios from 'axios';
+import Moment from 'moment';
 import moment from 'moment';
 
 function Customers() {
