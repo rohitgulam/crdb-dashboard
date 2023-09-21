@@ -1,70 +1,37 @@
-# Getting Started with Create React App
+# CRDB Dashboard
+ This dashboard is a companion web app for the Fomu Janja mobile app that was created by my other team members. This dashboard allows you to:
+ - See all created users
+ - Create users that can then use the mobile app
+ - Input the token that was generated via the app so you can see the transaction of the specific user
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Tech Stack 
 
-## Available Scripts
+[Add the main technologies you used to build this project]
 
-In the project directory, you can run:
+**Example:**
 
-### `npm start`
+  - ReactJS
+  - TailwindCSS
+  - Context API (for state management)
+  - Node.js
+  - Express
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# Installation
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+To install CRDB Dashboard locally, please follow the steps below:
+  - Clone repo to your machine
+  - Open the root of the project and install all dependencies with `npm install`
+  You can then run the project with (The API might not be live since this is the front-end only. The APIs are hosted elsewhere):
+    - `npm start` - running local version
 
-### `npm test`
+# What I have learned
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+While I was building the CRDB Dashboard, I learned the fundamentals of React and Context API. I learned how to pass state between different components with the Context API. I have used Reat hooks like useEffect, and useState and used them to change the state depending on the action taken by the user. It was my first project collaborating with other developers and we managed to collaborate with ease.
 
-### `npm run build`
+# What issues I faced and how I resolved them
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Collaborating with the other developers working on this was hard at first and we caused a lot of merge conflicts but after googling we managed to solve them and found a way to work together
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# Source
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is part of FinHub 1st Cohort that was conducted during the PT period in 2022
